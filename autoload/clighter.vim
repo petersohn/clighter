@@ -88,6 +88,7 @@ fun! clighter#Enable()
 endf
 
 fun! clighter#Disable()
+    silent! au! ClighterAutoStart
     silent! au! ClighterEnable
     py clang_service.ClangService().stop()
     let s:clighter_enabled=0
